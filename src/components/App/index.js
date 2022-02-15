@@ -10,6 +10,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <Show />
       </header>
+      <h1>Testing</h1>
     </div>
   );
 }
