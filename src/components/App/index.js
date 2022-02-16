@@ -1,16 +1,15 @@
-import Show from "../Show";
-
-import logo from "./logo.svg";
-import "./App.css";
+import Hero from "../Hero";
+import Header from "../Header";
+import Sidebar from "../Sidebar";
+import Footer from "../Footer";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Show />
-      </header>
-      <h1>Testing</h1>
+      <Header />
+      <Sidebar />
+      <Hero />
+      <Footer />
     </div>
   );
 }
