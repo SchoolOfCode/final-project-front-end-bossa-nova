@@ -1,5 +1,7 @@
 import React from "react";
 
+// this will probably be better created via react rather than hardcoded
+
 function Hero() {
   return (
     <div className="Hero">
