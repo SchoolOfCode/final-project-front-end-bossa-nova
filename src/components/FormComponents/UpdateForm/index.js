@@ -1,6 +1,4 @@
 import React from "react";
-import CancelButton from "../../ReusableComponents/CancelButton";
-import data from "../../data";
 
 function UpdateForm(props) {
   return props.trigger ? (
@@ -41,8 +39,12 @@ function UpdateForm(props) {
         </select>
         <label>Notes</label>
         <textarea className="notes"></textarea>
-        <button onClick={() => props.setTrigger(false)}>update</button>
-        <CancelButton />
+        <button type="button" onClick={() => props.setTrigger(false)}>
+          update
+        </button>
+        <button type="button" onClick={() => props.setTrigger(false)}>
+          Cancel
+        </button>
       </form>
     </div>
   ) : (

@@ -31,6 +31,7 @@ function PreviewTable() {
           ))}
         </tbody>
       </table>
+
       <UpdateForm trigger={jobUpdate} setTrigger={setJobUpdate} />
     </div>
   );
