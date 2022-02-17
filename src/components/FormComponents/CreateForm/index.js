@@ -1,7 +1,6 @@
 import React from "react";
-import CancelButton from "../../ReusableComponents/CancelButton";
 
-import styles from "./CreateForm.module.css"
+import styles from "./CreateForm.module.css";
 
 // save and cancel buttons have the same value, save will need to be changed so it saves the data. the cancel button just closes popup
 
@@ -23,8 +22,12 @@ function CreateForm(props) {
           <option>Offer</option>
         </select>
         <div className={styles.Buttons}>
-          <button onClick={() => props.setTrigger(false)}>save</button>
-          <CancelButton />
+          <button type="button" onClick={() => props.setTrigger(false)}>
+            update
+          </button>
+          <button type="button" onClick={() => props.setTrigger(false)}>
+            Cancel
+          </button>
         </div>
       </form>
     </div>
