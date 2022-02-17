@@ -1,4 +1,5 @@
 import React from "react";
+import CancelButton from "../../ReusableComponents/CancelButton";
 
 // save and cancel buttons have the same value, save will need to be changed so it saves the data. the cancel button just closes popup
 
@@ -20,7 +21,7 @@ function CreateForm(props) {
           <option>Offer</option>
         </select>
         <button onClick={() => props.setTrigger(false)}>save</button>
-        <button onClick={() => props.setTrigger(false)}>cancel</button>
+        <CancelButton />
       </form>
     </div>
   ) : (

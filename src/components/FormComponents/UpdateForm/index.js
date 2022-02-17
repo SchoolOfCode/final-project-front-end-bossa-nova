@@ -1,4 +1,5 @@
 import React from "react";
+import CancelButton from "../../ReusableComponents/CancelButton";
 import data from "../../data";
 
 function UpdateForm(props) {
@@ -41,7 +42,7 @@ function UpdateForm(props) {
         <label>Notes</label>
         <textarea className="notes"></textarea>
         <button onClick={() => props.setTrigger(false)}>update</button>
-        <button onClick={() => props.setTrigger(false)}>cancel</button>
+        <CancelButton />
       </form>
     </div>
   ) : (
