@@ -1,6 +1,8 @@
 import React from "react";
 import CancelButton from "../../ReusableComponents/CancelButton";
 
+import styles from "./"
+
 // save and cancel buttons have the same value, save will need to be changed so it saves the data. the cancel button just closes popup
 
 function CreateForm(props) {

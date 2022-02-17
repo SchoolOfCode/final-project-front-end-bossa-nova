@@ -1,0 +1,7 @@
+.Hero {
+}
+
+.CreateForm {
+  display: flex;
+  flex-direction: column;
+}
