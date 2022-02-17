@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import PreviewTable from "../FormComponents/PreviewTable";
-
-// this will probably be better created via react rather than hardcoded
+import CreateForm from "../FormComponents/CreateForm";
 
 function Hero() {
+  const [buttonAddNew, setButtonAddNew] = useState(false);
+
   return (
-    <div className="Hero">
-      <button>Add New</button>
+    <main className="Hero">
+      <button onClick={() => setButtonAddNew(true)}>Add New</button>
+      <CreateForm trigger={buttonAddNew} setTrigger={setButtonAddNew}>
+        <p>my popup</p>
+      </CreateForm>
       <PreviewTable />
-    </div>
+    </main>
   );
 }
 

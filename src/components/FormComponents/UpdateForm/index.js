@@ -1,7 +1,8 @@
 import React from "react";
+import data from "../../data";
 
-function UpdateForm() {
-  return (
+function UpdateForm(props) {
+  return props.trigger ? (
     <div>
       <h2>company name and job title</h2> {/* we need to import this data */}
       <form>
@@ -12,7 +13,8 @@ function UpdateForm() {
         <label>Application deadline</label>
         <input className="applicationDeadline"></input>
         <label>Salary</label>
-        <input className="salary"></input>
+        <input className="salaryMin" placeholder="Minimun Salary"></input>
+        <input className="salaryMax" placeholder="Minimun Salary"></input>
         <label>Tech Stack</label>
         <input className="techStack"></input>
         <label>Date added</label>
@@ -38,10 +40,12 @@ function UpdateForm() {
         </select>
         <label>Notes</label>
         <textarea className="notes"></textarea>
-        <button>update</button>
-        <button>cancel</button>
+        <button onClick={() => props.setTrigger(false)}>update</button>
+        <button onClick={() => props.setTrigger(false)}>cancel</button>
       </form>
     </div>
+  ) : (
+    ""
   );
 }
 

@@ -1,8 +1,10 @@
 import React from "react";
 
-function CreateForm() {
-  return (
-    <div>
+// save and cancel buttons have the same value, save will need to be changed so it saves the data. the cancel button just closes popup
+
+function CreateForm(props) {
+  return props.trigger ? (
+    <div className="addNew">
       <form>
         <label>Job Title</label>
         <input className="jobTitle"></input>
@@ -17,10 +19,12 @@ function CreateForm() {
           <option>Interview</option>
           <option>Offer</option>
         </select>
-        <button>save</button>
-        <button>cancel</button>
+        <button onClick={() => props.setTrigger(false)}>save</button>
+        <button onClick={() => props.setTrigger(false)}>cancel</button>
       </form>
     </div>
+  ) : (
+    ""
   );
 }
 
