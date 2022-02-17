@@ -2,11 +2,13 @@ import React from "react";
 import CancelButton from "../../ReusableComponents/CancelButton";
 import data from "../../data";
 
+import styles from "./UpdateForm.module.css"
+
 function UpdateForm(props) {
   return props.trigger ? (
     <div>
       <h2>company name and job title</h2> {/* we need to import this data */}
-      <form>
+      <form className={styles.UpdateForm}>
         <label>Job Title</label>
         <input className="jobTitle"></input>
         <label>Contact</label>
@@ -14,8 +16,8 @@ function UpdateForm(props) {
         <label>Application deadline</label>
         <input className="applicationDeadline"></input>
         <label>Salary</label>
-        <input className="salaryMin" placeholder="Minimun Salary"></input>
-        <input className="salaryMax" placeholder="Minimun Salary"></input>
+        <input className="salaryMin" placeholder="Min Salary"></input>
+        <input className="salaryMax" placeholder="Max Salary"></input>
         <label>Tech Stack</label>
         <input className="techStack"></input>
         <label>Date added</label>
@@ -41,8 +43,10 @@ function UpdateForm(props) {
         </select>
         <label>Notes</label>
         <textarea className="notes"></textarea>
-        <button onClick={() => props.setTrigger(false)}>update</button>
-        <CancelButton />
+        <div className={styles.Buttons}>
+          <button onClick={() => props.setTrigger(false)}>update</button>
+          <CancelButton />
+        </div>
       </form>
     </div>
   ) : (

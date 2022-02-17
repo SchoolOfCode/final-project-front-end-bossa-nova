@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import data from "../../data";
 import UpdateForm from "../UpdateForm";
 
+import styles from "./PreviewTable.module.css"
+
 function PreviewTable() {
   const [jobDisplay, setJobDisplay] = useState(data);
 

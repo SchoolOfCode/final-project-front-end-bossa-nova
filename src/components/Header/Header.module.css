@@ -1,0 +1,7 @@
+.Header {
+  display: flex;
+  background-color: var(--header-bg);
+  color: var(--default-bg);
+  justify-content: space-between;
+  padding: var(--spacing-sm);
+}
