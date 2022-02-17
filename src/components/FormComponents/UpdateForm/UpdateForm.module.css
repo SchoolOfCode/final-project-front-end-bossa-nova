@@ -1,11 +1,11 @@
-.AddNew {
+.UpdateForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .Buttons {
   display: flex;
+  justify-content: center;
+  justify-content: space-around;
   margin-top: var(--spacing-sm);
-  /* justify-content: space-between; */
 }
