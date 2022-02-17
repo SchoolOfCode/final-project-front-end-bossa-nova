@@ -45,6 +45,11 @@ function UpdateForm(props) {
         <button type="button" onClick={() => props.setTrigger(false)}>
           Cancel
         </button>
+
+        <div className={styles.Buttons}>
+          <button onClick={() => props.setTrigger(false)}>update</button>
+          <CancelButton />
+        </div>
       </form>
     </div>
   ) : (

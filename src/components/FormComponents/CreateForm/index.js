@@ -19,13 +19,18 @@ function CreateForm(props) {
           <option>Interview</option>
           <option>Offer</option>
         </select>
-        <button type="button" onClick={() => props.setTrigger(false)}>
-          save
-        </button>
-        <button type="button" onClick={() => props.setTrigger(false)}>
-          Cancel
-        </button>
       </form>
+      <button type="button" onClick={() => props.setTrigger(false)}>
+        save
+      </button>
+      <button type="button" onClick={() => props.setTrigger(false)}>
+        Cancel
+      </button>
+
+      <div className={styles.Buttons}>
+        <button onClick={() => props.setTrigger(false)}>save</button>
+        <CancelButton />
+      </div>
     </div>
   ) : (
     ""
