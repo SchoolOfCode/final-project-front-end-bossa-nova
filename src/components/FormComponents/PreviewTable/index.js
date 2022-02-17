@@ -10,21 +10,21 @@ function PreviewTable() {
   return (
     <div>
       <table>
-        <thread>
+        <thead>
           <tr>
             <th>Job Title</th>
             <th>Company</th>
             <th>Salary</th>
             <th>Status</th>
           </tr>
-        </thread>
+        </thead>
         <tbody>
           {jobDisplay.map((jobDisplay) => (
-            <tr onClick={() => setJobUpdate(true)}>
+            <tr key={jobDisplay._id} onClick={() => setJobUpdate(true)}>
               <td>{jobDisplay.jobTitle}</td>
               <td>{jobDisplay.company}</td>
               <td>
-                {jobDisplay.salary.minSalary} - {jobDisplay.salary.maxSalary}
+                {jobDisplay.minSalary} - {jobDisplay.maxSalary}
               </td>
               <td>{jobDisplay.jobStatus}</td>
             </tr>

@@ -2,6 +2,7 @@ import Hero from "../Hero";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
 import Footer from "../Footer";
+import Fetch from "../api/Fetch";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Sidebar />
       <Hero />
       <Footer />
+      <Fetch />
     </div>
   );
 }
