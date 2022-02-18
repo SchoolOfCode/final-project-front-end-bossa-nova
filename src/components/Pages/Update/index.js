@@ -7,16 +7,16 @@ import {
   Navigate,
   useNavigate,
 } from "react-router-dom";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 import data from "./../../data";
 
 import styles from "./UpdateForm.module.css";
 
-function UpdateForm(props) {
+function UpdateForm(date) {
   const navigate = useNavigate();
-  const [calDateAdded, setCalDateAdded] = useState(new Date());
-
+  const [startDate, setStartDate] = useState(new Date());
   const [jobDisplay, setJobDisplay] = useState();
 
   // useEffect(async () => {
@@ -59,12 +59,11 @@ function UpdateForm(props) {
           defaultValue={data.techStack}
         />
         <label>Date added</label>
-        <Calendar
-          className="dateAdded"
-          onChange={setCalDateAdded}
-          value={calDateAdded}
+        <DatePicker
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
         />
-        {console.log("Date added: ", calDateAdded)}
+        {console.log("Date added: ", date)}
         <input
           type="text"
           className="dateAdded"
