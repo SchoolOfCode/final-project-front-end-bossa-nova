@@ -7,20 +7,23 @@ import {
   Navigate,
   useNavigate,
 } from "react-router-dom";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 import data from "./../../data";
 
 import styles from "./UpdateForm.module.css";
 
 function UpdateForm(props) {
   const navigate = useNavigate();
+  const [calDateAdded, setCalDateAdded] = useState(new Date());
 
   const [jobDisplay, setJobDisplay] = useState();
 
-  useEffect(async () => {
-    let result = await fetch(data._id);
-    result = await result.json();
-    setJobDisplay(result);
-  });
+  // useEffect(async () => {
+  //   let result = await fetch(data._id);
+  //   result = await result.json();
+  //   setJobDisplay(result);
+  // });
 
   return (
     <div>
@@ -56,11 +59,18 @@ function UpdateForm(props) {
           defaultValue={data.techStack}
         />
         <label>Date added</label>
+        <Calendar
+          className="dateAdded"
+          onChange={setCalDateAdded}
+          value={calDateAdded}
+        />
+        {console.log("Date added: ", calDateAdded)}
         <input
           type="text"
           className="dateAdded"
           defaultValue={data.dateAdded}
         />
+
         <label>Company</label>
         <input type="text" className="company" defaultValue={data.company} />
         <label>URL links</label>
