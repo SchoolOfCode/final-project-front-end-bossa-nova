@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import useFetch from "react-hook-usefetch";
 
 function Fetch() {
   const [data, setData] = useState(null);
