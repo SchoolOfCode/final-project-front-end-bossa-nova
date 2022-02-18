@@ -1,0 +1,11 @@
+.UpdateForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.Buttons {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  margin-top: var(--spacing-sm);
+}
