@@ -22,8 +22,8 @@ function Resources() {
   }, [filter]);
 
   return (
-    <div>
-      <header>
+    <div className="resources">
+      <header className="resources-header">
         <a href="/#" active={filter === "all"} onClick={() => setFilter("all")}>
           ALL
         </a>

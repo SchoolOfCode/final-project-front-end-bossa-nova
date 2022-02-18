@@ -1,15 +1,15 @@
-* {
+.resources {
   box-sizing: border-box;
 }
 
-a:link,
+.resources-header a:link,
 a:visited {
   text-decoration: none;
   padding: 20px;
   color: black;
 }
 
-header {
+.resources-header {
   padding: 20px;
   font-size: 30px;
   text-align: center;
