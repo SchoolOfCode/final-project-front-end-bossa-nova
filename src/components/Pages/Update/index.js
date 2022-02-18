@@ -7,6 +7,9 @@ import {
   Navigate,
   useNavigate,
 } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 import data from "./../../data";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -61,8 +64,15 @@ function UpdateForm(date) {
         <DatePicker
           selected={startDate}
           onChange={(date) => setStartDate(date)}
+
         />
         {console.log("Date added: ", date)}
+        <input
+          type="text"
+          className="dateAdded"
+          defaultValue={data.dateAdded}
+        />
+
         <label>Company</label>
         <input type="text" className="company" defaultValue={data.company} />
         <label>URL links</label>
