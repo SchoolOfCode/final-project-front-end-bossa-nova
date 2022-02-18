@@ -1,8 +1,19 @@
 .Footer {
   display: flex;
   justify-content: center;
-  grid-area: Footer;
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: fit-content;
+
   background-color: var(--header-bg);
   color: var(--default-bg);
   padding: var(--spacing-sm);
+}
+
+@media screen and (min-width: 700px) {
+  .Footer {
+    grid-area: Footer;
+  }
 }

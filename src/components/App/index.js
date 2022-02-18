@@ -8,9 +8,9 @@ import styles from "./App.module.css";
 function App() {
   return (
     <div className={styles.App}>
-      <Header className={styles.Header} />
-      <Sidebar className={styles.Sidebar} />
-      <Hero className={styles.HeroSection} />
+      <Header />
+      <Sidebar />
+      <Hero />
       <Footer className={styles.Footer} />
       <Fetch />
     </div>
