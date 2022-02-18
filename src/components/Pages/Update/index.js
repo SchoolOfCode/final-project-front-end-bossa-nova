@@ -22,19 +22,22 @@ function UpdateForm(date) {
   const [deadlineDate, setDeadlineDate] = useState(new Date());
   const [interviewDate, setInterviewDate] = useState(new Date());
 
-  const [jobDisplay, setJobDisplay] = useState();
-
+  const [jobDisplay, setJobDisplay] = useState(data);
+  let jobToDisplay = jobDisplay._id;
   // useEffect(async () => {
   //   let result = await fetch(data._id);
   //   result = await result.json();
   //   setJobDisplay(result);
   // });
-
+  {
+    console.log(jobToDisplay);
+  }
   return (
     <div>
       <h2>company name and job title</h2> {/* we need to import this data */}
       <form className={styles.UpdateForm}>
         <label>Job Title</label>
+        <p>{jobDisplay.jobTitle}</p>
         <input type="text" className="jobTitle" defaultValue={data.jobTitle} />
         <label>Contact</label>
         <input type="text" className="contact" defaultValue={data.contact} />
@@ -67,7 +70,6 @@ function UpdateForm(date) {
           selected={startDate}
           onChange={(date) => setStartDate(date)}
         />
-        {console.log("Date added: ", date)}
 
         <label>Company</label>
         <input type="text" className="company" defaultValue={data.company} />

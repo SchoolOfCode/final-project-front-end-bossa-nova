@@ -5,6 +5,7 @@ import AddNew from "../Pages/AddNew";
 import Update from "../Pages/Update";
 import ErrorPage from "../Pages/ErrorPage";
 import Login from "../Pages/Login";
+import Resources from "../Pages/Resources";
 
 import styles from "./Hero.module.css";
 
@@ -17,6 +18,7 @@ function Hero() {
         <Route path="/update" element={<Update />} />
         <Route path="/update/:_id" element={<Update />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/resources" element={<Resources />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </main>

@@ -40,6 +40,7 @@ function PreviewTable() {
             {jobDisplay.map((jobDisplay) => (
               <tr
                 key={jobDisplay._id}
+                item={jobDisplay}
                 onClick={() => {
                   navigate("/update" + "/" + jobDisplay._id);
                 }}
