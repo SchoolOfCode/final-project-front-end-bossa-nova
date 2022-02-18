@@ -1,25 +1,27 @@
 import React, { useState } from "react";
-import PreviewTable from "../FormComponents/PreviewTable";
-import CreateForm from "../FormComponents/CreateForm";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "../Pages/Home";
+import AddNew from "../Pages/AddNew";
+import Update from "../Pages/Update";
+import ErrorPage from "../Pages/ErrorPage";
 
 import styles from "./Hero.module.css";
 
 function Hero() {
-  const [buttonAddNew, setButtonAddNew] = useState(false);
-
   return (
-    <main className={styles.Hero}>
-      <button onClick={() => setButtonAddNew(true)}>Add New</button>
-      <CreateForm
-        className={styles.CreateForm}
-        trigger={buttonAddNew}
-        setTrigger={setButtonAddNew}
-      >
-        <p>my popup</p>
-      </CreateForm>
-      <PreviewTable />
-    </main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/add-new" element={<AddNew />} />
+        <Route path="/update" element={<Update />} />
+        <Route path="/update/:_id" element={<Update />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default Hero;
+
+{
+}
