@@ -18,6 +18,10 @@ import styles from "./UpdateForm.module.css";
 function UpdateForm(date) {
   const navigate = useNavigate();
   const [startDate, setStartDate] = useState(new Date());
+  const [offerDate, setOfferDate] = useState(new Date());
+  const [deadlineDate, setDeadlineDate] = useState(new Date());
+  const [interviewDate, setInterviewDate] = useState(new Date());
+
   const [jobDisplay, setJobDisplay] = useState();
 
   // useEffect(async () => {
@@ -35,10 +39,9 @@ function UpdateForm(date) {
         <label>Contact</label>
         <input type="text" className="contact" defaultValue={data.contact} />
         <label>Application deadline</label>
-        <input
-          type="text"
-          className="applicationDeadline"
-          defaultValue={data.applicationDeadline}
+        <DatePicker
+          selected={deadlineDate}
+          onChange={(date) => setDeadlineDate(date)}
         />
         <label>Salary</label>
         <input
@@ -63,32 +66,24 @@ function UpdateForm(date) {
         <DatePicker
           selected={startDate}
           onChange={(date) => setStartDate(date)}
-
         />
         {console.log("Date added: ", date)}
-        <input
-          type="text"
-          className="dateAdded"
-          defaultValue={data.dateAdded}
-        />
 
         <label>Company</label>
         <input type="text" className="company" defaultValue={data.company} />
         <label>URL links</label>
         <input type="text" className="URLLink" defaultValue={data.urlLink} />
         <label>Interview date</label>
-        <input
-          type="text"
-          className="interviewDate"
-          defaultValue={data.interviewDate}
+        <DatePicker
+          selected={interviewDate}
+          onChange={(date) => setInterviewDate(date)}
         />
         <label>Location</label>
         <input type="text" className="location" defaultValue={data.location} />
         <label>Offer date</label>
-        <input
-          type="text"
-          className="offerDate"
-          defaultValue={data.offerDate}
+        <DatePicker
+          selected={offerDate}
+          onChange={(date) => setOfferDate(date)}
         />
         <label>Job description</label>
         <textarea

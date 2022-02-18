@@ -16,6 +16,7 @@ function Hero() {
         <Route path="/add-new" element={<AddNew />} />
         <Route path="/update" element={<Update />} />
         <Route path="/update/:_id" element={<Update />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </main>
