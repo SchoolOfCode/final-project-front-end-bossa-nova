@@ -8,19 +8,21 @@ import {
   useNavigate,
 } from "react-router-dom";
 import data from "./../../data";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 import styles from "./UpdateForm.module.css";
 
-function UpdateForm(props) {
+function UpdateForm(date) {
   const navigate = useNavigate();
-
+  const [startDate, setStartDate] = useState(new Date());
   const [jobDisplay, setJobDisplay] = useState();
 
-  useEffect(async () => {
-    let result = await fetch(data._id);
-    result = await result.json();
-    setJobDisplay(result);
-  });
+  // useEffect(async () => {
+  //   let result = await fetch(data._id);
+  //   result = await result.json();
+  //   setJobDisplay(result);
+  // });
 
   return (
     <div>
@@ -56,11 +58,11 @@ function UpdateForm(props) {
           defaultValue={data.techStack}
         />
         <label>Date added</label>
-        <input
-          type="text"
-          className="dateAdded"
-          defaultValue={data.dateAdded}
+        <DatePicker
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
         />
+        {console.log("Date added: ", date)}
         <label>Company</label>
         <input type="text" className="company" defaultValue={data.company} />
         <label>URL links</label>
