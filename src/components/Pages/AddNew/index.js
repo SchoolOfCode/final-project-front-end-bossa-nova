@@ -1,11 +1,20 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  Navigate,
+  useNavigate,
+} from "react-router-dom";
 
-import styles from "./CreateForm.module.css";
+import styles from "./AddNew.module.css";
 
 // save and cancel buttons have the same value, save will need to be changed so it saves the data. the cancel button just closes popup
 
-function CreateForm(props) {
-  return props.trigger ? (
+function AddNew(props) {
+  const navigate = useNavigate();
+  return (
     <div>
       <form className={styles.AddNew}>
         <label>Job Title</label>
@@ -22,18 +31,26 @@ function CreateForm(props) {
           <option>Offer</option>
         </select>
         <div className={styles.Buttons}>
-          <button type="button" onClick={() => props.setTrigger(false)}>
-            update
+          <button
+            type="button"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Save
           </button>
-          <button type="button" onClick={() => props.setTrigger(false)}>
+          <button
+            type="button"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
             Cancel
           </button>
         </div>
       </form>
     </div>
-  ) : (
-    ""
   );
 }
 
-export default CreateForm;
+export default AddNew;
