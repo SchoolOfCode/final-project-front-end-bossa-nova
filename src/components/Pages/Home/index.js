@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import data from "../../data";
 
 import {
@@ -13,9 +13,21 @@ import {
 import styles from "./Home.module.css";
 
 function PreviewTable() {
-  const navigate = useNavigate();
+  const [data, setData] = useState(null);
 
-  const [jobDisplay, setJobDisplay] = useState(data);
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(
+        `https://job-tracker-main.herokuapp.com/api/jobs`
+      );
+      const data = await response.json();
+      setData(data);
+    }
+
+    fetchData();
+  }, []);
+
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -37,21 +49,22 @@ function PreviewTable() {
             </tr>
           </thead>
           <tbody>
-            {jobDisplay.map((jobDisplay) => (
-              <tr
-                key={jobDisplay._id}
-                onClick={() => {
-                  navigate("/update" + "/" + jobDisplay._id);
-                }}
-              >
-                <td>{jobDisplay.jobTitle}</td>
-                <td>{jobDisplay.company}</td>
-                <td>
-                  {jobDisplay.minSalary} - {jobDisplay.maxSalary}
-                </td>
-                <td>{jobDisplay.jobStatus}</td>
-              </tr>
-            ))}
+            {data &&
+              data.map((job) => (
+                <tr
+                  key={job._id}
+                  onClick={() => {
+                    navigate(`/update/${job._id}`);
+                  }}
+                >
+                  <td>{job.jobTitle}</td>
+                  <td>{job.company}</td>
+                  <td>
+                    {job.minSalary} - {job.maxSalary}
+                  </td>
+                  <td>{job.jobStatus}</td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>

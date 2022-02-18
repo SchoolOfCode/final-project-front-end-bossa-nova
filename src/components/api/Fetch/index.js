@@ -1,20 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import useFetch from "react-hook-usefetch";
 
 function Fetch() {
-  const { isLoading, data, error } = useFetch(
-    `https://job-tracker-main.herokuapp.com/api/jobs`
-  );
+  const [data, setData] = useState(null);
 
-  console.log(isLoading, data, error && error.status);
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(
+        `https://job-tracker-main.herokuapp.com/api/jobs`
+      );
+      const data = await response.json();
+      setData(data);
+    }
 
-  return (
-    <div>
-      {data.map((job) => {
-        return <p>{job.jobTitle}</p>;
-      })}
-    </div>
-  );
+    fetchData();
+  }, []);
+
+  console.log(data);
+  return <p>{data && data[0].jobTitle}</p>;
 }
 
 export default Fetch;
+
+// `https://job-tracker-main.herokuapp.com/api/jobs`
