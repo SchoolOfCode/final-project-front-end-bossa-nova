@@ -8,7 +8,13 @@ function Fetch() {
 
   console.log(isLoading, data, error && error.status);
 
-  return <div></div>;
+  return (
+    <div>
+      {data.map((job) => {
+        return <p>{job.jobTitle}</p>;
+      })}
+    </div>
+  );
 }
 
 export default Fetch;
