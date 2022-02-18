@@ -97,13 +97,13 @@ select {
   /* Fonts */
   font-family: "Lato", sans-serif;
 
-  --h1: 6rem;
-  --h2: 4rem;
-  --h3: 3rem;
-  --h4: 2rem;
-  --h5: 1.5rem;
-  --body: 1.125rem;
-  --nav: 1rem;
+  --h1: 4rem;
+  --h2: 2.75rem;
+  --h3: 2rem;
+  --h4: 1.5rem;
+  --sidebar: 1.2rem;
+  --body: 1rem;
+  --nav: 0.875rem;
 
   --thin: 100;
   --light: 300;
@@ -119,6 +119,19 @@ select {
   --spacing-lg: 3em;
 }
 
+@media screen and (min-width: 700px) {
+  :root {
+    --h1: 6rem;
+    --h2: 4rem;
+    --h3: 3rem;
+    --h4: 2rem;
+    --sidebar: 1.5rem;
+    --body: 1.125rem;
+    --nav: 1rem;
+  }
+}
+
 body {
   font-size: var(--body);
+  font-weight: var(--reg);
 }
