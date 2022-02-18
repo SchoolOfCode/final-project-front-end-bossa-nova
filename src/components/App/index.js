@@ -8,10 +8,10 @@ import styles from "./App.module.css";
 function App() {
   return (
     <div className={styles.App}>
-      <Header />
-      <Sidebar />
-      <Hero />
-      <Footer />
+      <Header className={styles.Header} />
+      <Sidebar className={styles.Sidebar} />
+      <Hero className={styles.HeroSection} />
+      <Footer className={styles.Footer} />
       <Fetch />
     </div>
   );

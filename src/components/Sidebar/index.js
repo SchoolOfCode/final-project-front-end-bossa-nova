@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./Sidebar.module.css";
 
 function Sidebar() {
   return (
-    <div className="Siderbar">
+    <div className={styles.Sidebar}>
       <ul>
         <li className="applications">My Applications</li>
         <li className="checklist">Document Checklist</li>
