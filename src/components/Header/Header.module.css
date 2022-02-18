@@ -1,4 +1,5 @@
 .Header {
+  grid-area: Header;
   display: flex;
   background-color: var(--header-bg);
   color: var(--default-bg);

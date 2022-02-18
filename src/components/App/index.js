@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Sidebar />
       <Hero />
-      <Footer />
+      <Footer className={styles.Footer} />
       <Fetch />
     </div>
   );

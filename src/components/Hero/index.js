@@ -10,18 +10,16 @@ import styles from "./Hero.module.css";
 
 function Hero() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/add-new" element={<AddNew />} />
-      <Route path="/update" element={<Update />} />
-      <Route path="/update/:_id" element={<Update />} />
-      <Route path="*" element={<ErrorPage />} />
-    </Routes>
+    <main className={styles.HeroSection}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/add-new" element={<AddNew />} />
+        <Route path="/update" element={<Update />} />
+        <Route path="/update/:_id" element={<Update />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </main>
   );
 }
 
 export default Hero;
-
-{
-}

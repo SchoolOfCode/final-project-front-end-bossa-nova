@@ -1,6 +1,18 @@
 .App {
-  text-align: center;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+  min-height: 100vh;
+}
+
+@media screen and (min-width: 700px) {
+  .App {
+    display: grid;
+    grid-template-columns: 1.3fr 1.8fr 1.9fr;
+    grid-template-rows: 0.8fr 4.7fr 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Header Header Header"
+      "Sidebar HeroSection HeroSection"
+      "Footer Footer Footer";
+    min-height: 100vh;
+  }
 }
