@@ -22,41 +22,45 @@ function Resources() {
   }, [filter]);
 
   return (
-    <div className="resources">
-      <header className="resources-header">
-        <a href="/#" active={filter === "all"} onClick={() => setFilter("all")}>
+    <div className={styles.resources}>
+      <header className={styles.resourcesHeader}>
+        <h3
+          className={styles.pointer}
+          active={filter === "all"}
+          onClick={() => setFilter("all")}
+        >
           ALL
-        </a>
-        <a
-          href="/#"
+        </h3>
+        <h3
+          className={styles.pointer}
           active={filter === "backend"}
           onClick={() => setFilter("backend")}
         >
           BACKEND
-        </a>
-        <a
-          href="/#"
+        </h3>
+        <h3
+          className={styles.pointer}
           active={filter === "js-library"}
           onClick={() => setFilter("js-library")}
         >
           JS LIBRARY
-        </a>
-        <a
-          href="/#"
+        </h3>
+        <h3
+          className={styles.pointer}
           active={filter === "styling"}
           onClick={() => setFilter("styling")}
         >
           STYLING
-        </a>
-        <a
-          href="/#"
+        </h3>
+        <h3
+          className={styles.pointer}
           active={filter === "html"}
           onClick={() => setFilter("html")}
         >
           HTML
-        </a>
+        </h3>
       </header>
-      <div className="link-list">
+      <div className={styles.linkList}>
         {resourceLink.map((resourceLink) =>
           resourceLink.filtered === true ? (
             <LinkPreview url={resourceLink.link} width="250px" height="350px" />

@@ -2,20 +2,23 @@
   box-sizing: border-box;
 }
 
-.resources-header a:link,
-a:visited {
-  text-decoration: none;
-  padding: 20px;
-  color: black;
+h3.pointer {
+  cursor: pointer;
+}
+h3:hover {
+  background-color: #ccc;
 }
 
 .resources-header {
+  display: inline;
   padding: 20px;
   font-size: 30px;
   text-align: center;
+  padding: 20px;
+  align-items: center;
 }
 
-.link-list {
+.linkList {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
