@@ -1,6 +1,7 @@
 .Header {
   grid-area: Header;
   display: flex;
+  height: fit-content;
   background-color: var(--header-bg);
   color: var(--default-bg);
   justify-content: space-between;

@@ -22,14 +22,14 @@ function Header() {
       >
         logo home button
       </div>
-      <button
+      <div
         type="button"
         onClick={() => {
           navigate("/login");
         }}
       >
         Log Out
-      </button>
+      </div>
     </nav>
   );
 }
