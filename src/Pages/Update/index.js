@@ -22,22 +22,34 @@ function UpdateForm(date) {
   const [deadlineDate, setDeadlineDate] = useState(new Date());
   const [interviewDate, setInterviewDate] = useState(new Date());
 
-  const [jobDisplay, setJobDisplay] = useState(data);
-  let jobToDisplay = jobDisplay._id;
-  // useEffect(async () => {
-  //   let result = await fetch(data._id);
-  //   result = await result.json();
-  //   setJobDisplay(result);
-  // });
+  const jobID = "620fe139611b39e572cb0f6b";
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(
+        `https://job-tracker-main.herokuapp.com/api/jobs/${jobID}`
+      );
+      const jobData = await response.json();
+      setData(jobData);
+    }
+
+    fetchData();
+  }, []);
+
   {
-    console.log(jobToDisplay);
+    console.log(data);
   }
+
   return (
     <div>
-      <h2>company name and job title</h2> {/* we need to import this data */}
+      <h2>
+        {data.jobTitle}: {data.company}
+      </h2>
       <form className={styles.UpdateForm}>
         <label>Job Title</label>
-        <p>{jobDisplay.jobTitle}</p>
+        <p>{data.jobTitle}</p>
         <input type="text" className="jobTitle" defaultValue={data.jobTitle} />
         <label>Contact</label>
         <input type="text" className="contact" defaultValue={data.contact} />
