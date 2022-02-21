@@ -11,11 +11,10 @@ const Grid = styled.div`
   justify-content: space-between;
   padding: var(--spacing-sm) var(--spacing-md);
   box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.25);
-  z-index: 700;
-
+  /*   z-index: 1100; */
   display: grid;
   grid-template-columns: min-content 1fr min-content;
-  height: 48px;
+  height: 4rem;
   align-items: stretch;
   padding: 0 24px;
   > div {

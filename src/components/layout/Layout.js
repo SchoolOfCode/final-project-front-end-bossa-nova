@@ -14,11 +14,12 @@ const Grid = styled.div`
 
 const GridNav = styled.div`
   grid-area: nav;
-  z-index: 2000;
+  grid-area: 2 / 2 / auto / span 3;
 `;
 
 const GridHeader = styled.header`
   grid-area: header;
+  z-index: 1000;
 `;
 
 const GridMain = styled.main`

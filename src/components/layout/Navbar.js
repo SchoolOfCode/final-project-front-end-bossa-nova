@@ -14,13 +14,16 @@ const StyledNav = styled.nav`
   top: 0;
   z-index: 1000;
   display: flex;
+  height: 37rem;
+  margin-left: 1rem;
+  border-radius: 0px 0px 1rem 1rem;
+  box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.25);
   flex-direction: column;
   transition-property: width, transform !important;
   transition-duration: 0.3s !important;
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1) !important;
   &::before {
     content: "";
-    ${"" /* background-color: rgba(var(--color-secondary-rgb), 0.2); */}
     position: absolute;
     width: 100%;
     height: 100%;
