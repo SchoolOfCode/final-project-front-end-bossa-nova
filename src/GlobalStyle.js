@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
 
 {/* Imported global styles from Ben's branch */}
         --color-dark: #656565;
-        --color-light: #ebf5fb;
+        --color-light: #ebf5fb; {/* Changed to light blue background in design */}
         --color-dark-contrast: var(--color-light);
         --color-light-contrast: var(--color-dark);
         --color-dark-hover: #4d4d4d;
@@ -68,32 +68,47 @@ const GlobalStyle = createGlobalStyle`
         --color-blue-contrast: var(--color-light);
         --color-border: rgba(0,0,0, .08);
         --color-border-hover: rgba(0,0,0, .15);
-        --border-radius: 4px;
+        --border-radius: 15px; {/* Changed to border-radius in design */}
+        --box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.25); {/* Added to match box-shadow in design */}
+{/* Changed to em because it'll change according to the font sizes */}
         --space-0: 0;
-        --space-1: 4px;
-        --space-2: 8px;
-        --space-3: 16px;
-        --space-4: 32px;
-        --space-5: 64px;
-        --space-6: 128px;
+        --space-1: 0.25em;
+        --space-2: 0.5em;
+        --space-3: 1em;
+        --space-4: 2em;
+        --space-5: 4em;
+        --space-6: 8em;
         --primary-font: 'Lato', sans-serif;
-        --fsize-1: 10px;
-        --fsize-2: 12px;
+{/* Changed to rem because thats a responsive unit for font-sizes - this might need to be altered later */}
+        --fsize-1: 0.75rem;
+        --fsize-2: 0.875rem;
         --fsize-3: 1rem;
-        --fsize-4: 14px;
-        --fsize-5: 16px;
-        --fsize-6: 20px;
-        --fsize-7: 24px;
-        --fsize-8: 28px;
-        --fsize-9: 32px;
+        --fsize-4: 1.125rem;
+        --fsize-5: 1.25rem;
+        --fsize-6: 1.5rem;
+        --fsize-7: 1.75rem;
+        --fsize-8: 2rem;
+        --fsize-9: 2.5rem;
         --height-input: var(--space-4);
         --height-button: var(--space-4);
         --min-width-button: var(--space-4);
         --px-button: var(--space-2);
         --navbar-width: 256px;
-        @media(max-width: ${breakpoints.desktop}) {
-            --height-button: calc(var(--space-4) + 8px);
+
+        @media(min-width: ${breakpoints.desktop}) {
+            --height-button: calc(var(--space-4) + 8px); 
             --px-button: calc(var(--space-2) + 8px);
+
+{/* Changed font-sizes for desktop screens - this might need to be altered later */}
+            --fsize-1: 0.875rem;
+            --fsize-2: 1rem;
+            --fsize-3: 1.125rem;
+            --fsize-4: 1.25rem;
+            --fsize-5: 1.5rem;
+            --fsize-6: 1.75rem;
+            --fsize-7: 2rem;
+            --fsize-8: 2.5rem;
+            --fsize-9: 3rem;
         }
     }
     ${resetStyle}
