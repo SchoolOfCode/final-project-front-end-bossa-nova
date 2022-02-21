@@ -1,30 +1,25 @@
 import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  Navigate,
-  useNavigate,
-} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-
-import data from "./../data";
 import "react-datepicker/dist/react-datepicker.css";
 
 import styles from "./UpdateForm.module.css";
 
 function UpdateForm(date) {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // navigate between pages
+
+  // calendar picker for each Date field
   const [startDate, setStartDate] = useState(new Date());
   const [offerDate, setOfferDate] = useState(new Date());
   const [deadlineDate, setDeadlineDate] = useState(new Date());
   const [interviewDate, setInterviewDate] = useState(new Date());
 
+  //The job ID will be replaced for the ID on the url
   const jobID = "62135d711c36280c3e517323";
 
   const [data, setData] = useState("");
+
+  // Potentially have it on custom Hook
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
@@ -42,8 +37,6 @@ function UpdateForm(date) {
   }, []);
 
   console.log(data);
-  console.log(data.applicationDeadline);
-  console.log(deadlineDate);
 
   return (
     <div>
