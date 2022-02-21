@@ -7,8 +7,43 @@ const breakpoints = {
 
 const GlobalStyle = createGlobalStyle`
     html {
+    {/* Imported global styles from AdjustedCSS branch */}
+      --default-font: #0b0d17;
+      --default-bg: #ebf5fb;
+      --header-bg: #21618c;
+      --row-bg: #85c1e9;
+      --submit-btn: #a2d9ce;
+      --sidebar-bg: #d6eaf8;
+      --accent: #fa9583;
+      --accent-light: #f4dfcc;
+
+    /* Fonts */
+    font-family: "Lato", sans-serif;
+
+    --h1: 4rem;
+    --h2: 2.75rem;
+    --h3: 2rem;
+    --h4: 1.5rem;
+    --sidebar: 1.2rem;
+    --body: 1rem;
+    --nav: 0.875rem;
+
+    --thin: 100;
+    --light: 300;
+    --reg: 400;
+    --bold: 700;
+    --extra-bold: 900;
+
+    --letter-space: 2px;
+
+    /* Spacing */
+    --spacing-sm: 1em;
+    --spacing-md: 2em;
+    --spacing-lg: 3em;
+
+{/* Imported global styles from Ben's branch */}
         --color-dark: #656565;
-        --color-light: #f6f6f6;
+        --color-light: #ebf5fb;
         --color-dark-contrast: var(--color-light);
         --color-light-contrast: var(--color-dark);
         --color-dark-hover: #4d4d4d;
@@ -41,10 +76,10 @@ const GlobalStyle = createGlobalStyle`
         --space-4: 32px;
         --space-5: 64px;
         --space-6: 128px;
-        --primary-font: 'Roboto', sans-serif;
+        --primary-font: 'Lato', sans-serif;
         --fsize-1: 10px;
         --fsize-2: 12px;
-        --fsize-3: 13px;
+        --fsize-3: 1rem;
         --fsize-4: 14px;
         --fsize-5: 16px;
         --fsize-6: 20px;
@@ -69,7 +104,7 @@ const GlobalStyle = createGlobalStyle`
         color: var(--color-dark);
     }
     h1, h2, h3, h4, h4, h5, h6 {
-        font-weight: 500;
+        font-weight: 700;
     }
     h1 {
         font-size: var(--fsize-9);
