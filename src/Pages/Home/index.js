@@ -17,10 +17,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-// import { useState } from "react";
-// import data from "./../data";
-
-// import styles from "./Home.module.css";
+import styles from "./Home.module.css";
 
 // function PreviewTable() {
 
@@ -28,13 +25,13 @@ import {
 
 //   return (
 //     <div>
-//       <button
-//         onClick={() => {
-//           navigate("/add-new");
-//         }}
-//       >
-//         Add new job
-//       </button>
+// <button
+//   onClick={() => {
+//     navigate("/add-new");
+//   }}
+// >
+//   Add new job
+// </button>
 //       <div className={styles.PreviewTable}>
 //         <table>
 //           <thead>
@@ -50,9 +47,9 @@ import {
 //               <tr
 //                 key={jobDisplay._id}
 //                 item={jobDisplay}
-//                 onClick={() => {
-//                   navigate("/update" + "/" + jobDisplay._id);
-//                 }}
+// onClick={() => {
+//   navigate(`/update/${job._id}`);
+// }}
 //               >
 //                 <td>{jobDisplay.jobTitle}</td>
 //                 <td>{jobDisplay.company}</td>
@@ -117,24 +114,6 @@ function createData({
   return { jobTitle, company, salary, jobStatus, _id };
 }
 
-const rows = [
-  createData("India", "IN", 1324171354, 3287263),
-  createData("China", "CN", 1403500365, 9596961),
-  createData("Italy", "IT", 60483973, 301340),
-  createData("United States", "US", 327167434, 9833520),
-  createData("Canada", "CA", 37602103, 9984670),
-  createData("Australia", "AU", 25475400, 7692024),
-  createData("Germany", "DE", 83019200, 357578),
-  createData("Ireland", "IE", 4857000, 70273),
-  createData("Mexico", "MX", 126577691, 1972550),
-  createData("Japan", "JP", 126317000, 377973),
-  createData("France", "FR", 67022000, 640679),
-  createData("United Kingdom", "GB", 67545757, 242495),
-  createData("Russia", "RU", 146793744, 17098246),
-  createData("Nigeria", "NG", 200962417, 923768),
-  createData("Brazil", "BR", 210147125, 8515767),
-];
-
 export default function StickyHeadTable() {
   const navigate = useNavigate();
   const [data, setData] = useState(null);
@@ -166,49 +145,70 @@ export default function StickyHeadTable() {
   };
 
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden" }}>
-      <TableContainer sx={{ maxHeight: 440 }}>
-        <Table stickyHeader aria-label="sticky table">
-          <TableHead>
-            <TableRow>
-              {columns.map((column) => (
-                <TableCell
-                  key={nanoid()}
-                  align={column.align}
-                  style={{ minWidth: column.minWidth }}
-                >
-                  {column.label}
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {data &&
-              data
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((job) => {
-                  return (
-                    <TableRow hover role="checkbox" tabIndex={-1} key={job._id}>
-                      {columns.map((column) => {
-                        return (
-                          <TableCell key={nanoid()}>{job[column.id]}</TableCell>
-                        );
-                      })}
-                    </TableRow>
-                  );
-                })}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
-        component="div"
-        count={rows.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
-    </Paper>
+    <main>
+      <button
+        onClick={() => {
+          navigate("/add-new");
+        }}
+      >
+        Add new job
+      </button>
+      <Paper sx={{ width: "100%", overflow: "hidden" }}>
+        <TableContainer sx={{ maxHeight: 440 }}>
+          <Table stickyHeader aria-label="sticky table">
+            <TableHead>
+              <TableRow>
+                {columns.map((column) => (
+                  <TableCell
+                    key={nanoid()}
+                    align={column.align}
+                    style={{ minWidth: column.minWidth }}
+                  >
+                    {column.label}
+                  </TableCell>
+                ))}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {/* data && data means doesn't render anything until data has been fetched. Avoid an error */}
+              {data &&
+                data
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  .map((job) => {
+                    return (
+                      <TableRow
+                        hover
+                        role="checkbox"
+                        tabIndex={-1}
+                        key={job._id}
+                        onClick={() => {
+                          navigate(`/update/${job._id}`);
+                        }}
+                      >
+                        {columns.map((column) => {
+                          return (
+                            <TableCell key={nanoid()}>
+                              {job[column.id]}
+                            </TableCell>
+                          );
+                        })}
+                      </TableRow>
+                    );
+                  })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <TablePagination
+          rowsPerPageOptions={[10, 25, 100]}
+          component="div"
+          // count expects an interger so we pass 0 if data hasn't been fetched yet
+          count={data ? data.length : 0}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      </Paper>
+    </main>
   );
 }
