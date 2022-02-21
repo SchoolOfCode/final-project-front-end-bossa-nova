@@ -188,7 +188,11 @@ export default function StickyHeadTable() {
                         {columns.map((column) => {
                           return (
                             <TableCell key={nanoid()}>
-                              {job[column.id]}
+                              {column.id === "buttons" ? (
+                                <button>Delete</button>
+                              ) : (
+                                job[column.id]
+                              )}
                             </TableCell>
                           );
                         })}
