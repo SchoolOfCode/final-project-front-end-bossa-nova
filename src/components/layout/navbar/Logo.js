@@ -16,7 +16,7 @@ const StyleLink = styled(Link)`
   }
   span {
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--header-bg);
     opacity: ${(p) => Number(!p.compact)};
     transition: opacity 0.3s cubic-bezier(0.4, 0, 1, 1);
   }

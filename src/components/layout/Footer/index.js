@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./Footer.module.css";
+import FooterStyle from "./Footer.style";
 
 function Footer() {
-  return <footer className={styles.Footer}>© Bossa Nova 2022</footer>;
+  return <FooterStyle>© Bossa Nova 2022</FooterStyle>;
 }
 
 export default Footer;

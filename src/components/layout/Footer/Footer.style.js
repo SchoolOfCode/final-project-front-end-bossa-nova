@@ -1,4 +1,6 @@
-.Footer {
+import styled from "styled-components";
+
+const FooterStyle = styled.footer`
   display: flex;
   justify-content: center;
 
@@ -11,10 +13,6 @@
   background-color: var(--header-bg);
   color: var(--default-bg);
   padding: var(--spacing-sm);
-}
+`;
 
-/* @media screen and (min-width: 700px) {
-  .Footer {
-    grid-area: Footer;
-  }
-} */
+export default FooterStyle;

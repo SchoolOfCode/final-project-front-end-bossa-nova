@@ -4,6 +4,15 @@ import { breakpoints as bp } from "../../GlobalStyle";
 import { Button } from "../../ui";
 
 const Grid = styled.div`
+  grid-area: Header;
+  display: flex;
+  background-color: var(--header-bg);
+  color: var(--default-bg);
+  justify-content: space-between;
+  padding: var(--spacing-sm) var(--spacing-md);
+  box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.25);
+  z-index: 700;
+
   display: grid;
   grid-template-columns: min-content 1fr min-content;
   height: 48px;

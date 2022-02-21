@@ -10,7 +10,7 @@ const LinksGroup = styled.div`
   margin-right: 2px;
   overflow: hidden;
   overflow-y: auto;
-  background-color: rgba(var(--color-secondary-rgb), 0.1);
+
   transition: flex-grow 0.3s cubic-bezier(0.4, 0, 1, 1);
   ::-webkit-scrollbar {
     width: 4px;

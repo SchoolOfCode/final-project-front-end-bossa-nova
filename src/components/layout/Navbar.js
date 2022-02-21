@@ -7,7 +7,7 @@ import NavLinksGroup from "./navbar/NavLinksGroup";
 import { useState } from "react";
 
 const StyledNav = styled.nav`
-  background-color: black;
+  background-color: var(--sidebar-bg);
   width: ${(p) => (p.compact ? "70px" : "var(--navbar-width)")};
   height: 100vh;
   position: sticky;
@@ -20,7 +20,7 @@ const StyledNav = styled.nav`
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1) !important;
   &::before {
     content: "";
-    background-color: rgba(var(--color-secondary-rgb), 0.2);
+    ${"" /* background-color: rgba(var(--color-secondary-rgb), 0.2); */}
     position: absolute;
     width: 100%;
     height: 100%;

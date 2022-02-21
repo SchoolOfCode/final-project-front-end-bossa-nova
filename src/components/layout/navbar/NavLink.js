@@ -9,7 +9,7 @@ const StyledLink = styled(Link)`
   padding: 0 24px;
   font-size: var(--fsize-4);
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--header-bg);
   box-shadow: 0 -1px 0 0 rgba(255, 255, 255, 0.1);
   i {
     min-height: 22px;
