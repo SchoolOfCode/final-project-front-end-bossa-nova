@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^13.5.0",
     "jquery": "^3.6.0",
     "jquery-slim": "^3.0.0",
+    "nanoid": "^3.3.1",
     "react": "^17.0.2",
     "react-calendar": "^3.7.0",
     "react-datepicker": "^4.6.0",
