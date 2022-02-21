@@ -18,7 +18,7 @@ function UpdateForm(date) {
     maxSalary: 30000,
     techStack: "react.js",
     contact: "Rita Blogs",
-    dateAdded: "2023/10/10",
+    dateAdded: "2023/10/29",
     applicationDeadline: "2023/10/10",
     interviewDate: "2023/10/10",
     offerDate: "2023/10/10",
@@ -75,6 +75,7 @@ function UpdateForm(date) {
         <input type="text" className="contact" defaultValue={data.contact} />
         <label>Application deadline</label>
         <DatePicker
+          dateFormat="dd/MM/yyyy"
           selected={deadlineDate}
           onChange={(date) => setDeadlineDate(date)}
         />
@@ -99,6 +100,7 @@ function UpdateForm(date) {
         />
         <label>Date added</label>
         <DatePicker
+          dateFormat="dd/MM/yyyy"
           selected={startDate}
           onChange={(date) => setStartDate(date)}
         />
@@ -109,6 +111,7 @@ function UpdateForm(date) {
         <input type="text" className="URLLink" defaultValue={data.urlLink} />
         <label>Interview date</label>
         <DatePicker
+          dateFormat="dd/MM/yyyy"
           selected={interviewDate}
           onChange={(date) => setInterviewDate(date)}
         />
@@ -116,6 +119,7 @@ function UpdateForm(date) {
         <input type="text" className="location" defaultValue={data.location} />
         <label>Offer date</label>
         <DatePicker
+          dateFormat="dd/MM/yyyy"
           selected={offerDate}
           onChange={(date) => setOfferDate(date)}
         />
