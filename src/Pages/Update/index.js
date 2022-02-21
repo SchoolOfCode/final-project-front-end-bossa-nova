@@ -10,7 +10,7 @@ import {
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import data from "./../../data";
+import data from "./../data";
 import "react-datepicker/dist/react-datepicker.css";
 
 import styles from "./UpdateForm.module.css";

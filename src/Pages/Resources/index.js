@@ -1,7 +1,7 @@
 import { LinkPreview } from "@dhaiwat10/react-link-preview";
 import styles from "./Resources.module.css";
 import { useState, useEffect } from "react";
-import data from "../../resourcesData";
+import data from "./../resourcesData";
 
 function Resources() {
   const [filter, setFilter] = useState("all");
@@ -61,9 +61,10 @@ function Resources() {
         </h3>
       </header>
       <div className={styles.linkList}>
-        {resourceLink.map((resourceLink) =>
+        {resourceLink.map((resourceLink, index) =>
           resourceLink.filtered === true ? (
             <LinkPreview
+              key={index}
               url={resourceLink.link}
               width="250px"
               height="350px"

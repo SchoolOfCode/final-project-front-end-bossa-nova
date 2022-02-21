@@ -4,7 +4,7 @@
 
 @media screen and (min-width: 700px) {
   .App {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1.3fr 1.8fr 1.9fr;
     grid-template-rows: 0.8fr 4.7fr 0.5fr;
     gap: 0px 0px;
@@ -13,6 +13,23 @@
       "Header Header Header"
       "Sidebar HeroSection HeroSection"
       "Footer Footer Footer";
-    min-height: 100vh;
+    min-height: 100vh; */
   }
+}
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+.heroDesktop {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+}
+
+.heroMobile {
+  width: 100%;
+  margin-left: 0;
 }

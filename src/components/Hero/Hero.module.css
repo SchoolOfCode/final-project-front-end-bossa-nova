@@ -1,4 +1,11 @@
-.HeroSection {
-  grid-area: HeroSection;
+/* .HeroSection {
+  
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
   align-items: center;
-}
+  max-width: 80%;
+  right: 0;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+} */
