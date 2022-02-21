@@ -22,25 +22,28 @@ function UpdateForm(date) {
   const [deadlineDate, setDeadlineDate] = useState(new Date());
   const [interviewDate, setInterviewDate] = useState(new Date());
 
-  const jobID = "620fe139611b39e572cb0f6b";
+  const jobID = "62135d711c36280c3e517323";
 
-  const [data, setData] = useState(null);
-
+  const [data, setData] = useState("");
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
         `https://job-tracker-main.herokuapp.com/api/jobs/${jobID}`
       );
+      console.log(response);
+
       const jobData = await response.json();
+      console.log(jobData);
+
       setData(jobData);
     }
 
     fetchData();
   }, []);
 
-  {
-    console.log(data);
-  }
+  console.log(data);
+  console.log(data.applicationDeadline);
+  console.log(deadlineDate);
 
   return (
     <div>
@@ -49,7 +52,6 @@ function UpdateForm(date) {
       </h2>
       <form className={styles.UpdateForm}>
         <label>Job Title</label>
-        <p>{data.jobTitle}</p>
         <input type="text" className="jobTitle" defaultValue={data.jobTitle} />
         <label>Contact</label>
         <input type="text" className="contact" defaultValue={data.contact} />
