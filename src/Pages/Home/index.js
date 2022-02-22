@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Button from "../../components/Button/index";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -86,13 +87,13 @@ export default function StickyHeadTable() {
 
   return (
     <main>
-      <button
-        onClick={() => {
+      <Button
+        text="Add new job"
+        handleClick={() => {
           navigate("/add-new");
         }}
-      >
-        Add new job
-      </button>
+      />
+
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">
