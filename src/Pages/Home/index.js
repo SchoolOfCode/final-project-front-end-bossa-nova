@@ -93,7 +93,7 @@ export default function StickyHeadTable() {
         handleClick={() => {
           navigate("/add-new");
         }}
-        className={css.positiveButton}
+        className={css.tableNegativeButton}
       />
 
       <Paper sx={{ width: "100%", overflow: "hidden" }}>

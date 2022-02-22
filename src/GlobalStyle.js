@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
       --accent-light: #f4dfcc;
 
     /* Fonts */
-    font-family: "Lato", sans-serif;
+    --font-family: "Lato", sans-serif;
 
     --h1: 4rem;
     --h2: 2.75rem;
@@ -37,9 +37,9 @@ const GlobalStyle = createGlobalStyle`
     --letter-space: 2px;
 
     /* Spacing */
-    --spacing-sm: 1em;
-    --spacing-md: 2em;
-    --spacing-lg: 3em;
+    --spacing-sm: 0.5em;
+    --spacing-md: 1em;
+    --spacing-lg: 2em;
 
 {/* Imported global styles from Ben's branch */}
         --color-dark: #656565;
