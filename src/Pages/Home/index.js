@@ -9,75 +9,15 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import { nanoid } from "nanoid";
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  Navigate,
+  // BrowserRouter as Router,
+  // Routes,
+  // Route,
+  // Link,
+  // Navigate,
   useNavigate,
 } from "react-router-dom";
 
-import styles from "./Home.module.css";
-
-// function PreviewTable() {
-
-//   const [jobDisplay, setJobDisplay] = useState(data);
-
-//   return (
-//     <div>
-// <button
-//   onClick={() => {
-//     navigate("/add-new");
-//   }}
-// >
-//   Add new job
-// </button>
-//       <div className={styles.PreviewTable}>
-//         <table>
-//           <thead>
-//             <tr>
-//               <th>Job Title</th>
-//               <th>Company</th>
-//               <th>Salary</th>
-//               <th>Status</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             {jobDisplay.map((jobDisplay) => (
-//               <tr
-//                 key={jobDisplay._id}
-//                 item={jobDisplay}
-// onClick={() => {
-//   navigate(`/update/${job._id}`);
-// }}
-//               >
-//                 <td>{jobDisplay.jobTitle}</td>
-//                 <td>{jobDisplay.company}</td>
-//                 <td>
-//                   {jobDisplay.minSalary} - {jobDisplay.maxSalary}
-//                 </td>
-//                 <td>{jobDisplay.jobStatus}</td>
-//               </tr>
-//             ))}
-//           </tbody>
-//         </table>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default PreviewTable;
-
-/* <main className={styles.Hero}>
-      
-        <p>my popup</p>
-      </CreateForm>
-      <PreviewTable />
-    </main> */
-
-<th>Company</th>;
-//               <th>Salary</th>
-//               <th>Status</th>
+// import styles from "./Home.module.css";
 
 const columns = [
   { id: "jobTitle", label: "Job Title", minWidth: 100 },

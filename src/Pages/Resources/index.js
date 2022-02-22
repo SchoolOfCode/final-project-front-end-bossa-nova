@@ -19,7 +19,7 @@ function Resources() {
       filtered: p.category.includes(filter),
     }));
     setResourceLink(filtered);
-  }, [filter]);
+  }, [filter, resourceLink]);
 
   return (
     <div className={styles.resources}>
