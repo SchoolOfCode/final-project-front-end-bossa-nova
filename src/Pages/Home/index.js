@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Button from "../../components/Button/index";
+import css from "../../components/Button/Button.module.css";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -92,6 +93,7 @@ export default function StickyHeadTable() {
         handleClick={() => {
           navigate("/add-new");
         }}
+        className={css.positiveButton}
       />
 
       <Paper sx={{ width: "100%", overflow: "hidden" }}>

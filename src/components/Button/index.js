@@ -1,5 +1,9 @@
 import React from "react";
 
-export default function Button({ text, handleClick }) {
-  return <button onClick={handleClick}>{text}</button>;
+export default function Button({ text, handleClick, className }) {
+  return (
+    <button className={className} onClick={handleClick}>
+      {text}
+    </button>
+  );
 }
